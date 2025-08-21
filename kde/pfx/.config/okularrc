@@ -1,0 +1,34 @@
+[Desktop Entry]
+FullScreen=false
+
+[General]
+LockSidebar=true
+ShowSidebar=false
+
+[MainWindow]
+MenuBar=Disabled
+
+[Recent Files]
+File1[$e]=$HOME/documents/utfpr/pdfs/convalidacoes-3p.pdf
+File10[$e]=$HOME/sync/books/entendendo-algoritmos_aditya-bhargava.pdf
+File2[$e]=$HOME/sync/uni/documentos antigos/pdfs/convalidacoes-humanidades_Guilherme-Pacheco-Batista.pdf
+File3[$e]=$HOME/sync/uni/documentos antigos/historico-mecatronica-guilherme-pacheco-batista.pdf
+File4[$e]=$HOME/sync/books/fisica-basica-3-eletromagnetismo_moyses.pdf
+File5[$e]=$HOME/sync/notes/z-transform.pdf
+File6[$e]=$HOME/projects/learn/cpp/Modern-CPP-Programming/01.Introduction.pdf
+File7[$e]=$HOME/projects/learn/cpp/Modern-CPP-Programming/03.Basic_Concepts_I.pdf
+File8[$e]=$HOME/projects/learn/cpp/Modern-CPP-Programming/modern-cpp.pdf
+File9[$e]=$HOME/sync/notes/temas-e-problemas.pdf
+Name1[$e]=convalidacoes-3p.pdf
+Name10[$e]=entendendo-algoritmos_aditya-bhargava.pdf
+Name2[$e]=convalidacoes-humanidades_Guilherme-Pacheco-Batista.pdf
+Name3[$e]=historico-mecatronica-guilherme-pacheco-batista.pdf
+Name4[$e]=fisica-basica-3-eletromagnetismo_moyses.pdf
+Name5[$e]=z-transform.pdf
+Name6[$e]=01.Introduction.pdf
+Name7[$e]=03.Basic_Concepts_I.pdf
+Name8[$e]=modern-cpp.pdf
+Name9[$e]=temas-e-problemas.pdf
+
+[Shortcuts]
+mainToolBar=Ctrl+T

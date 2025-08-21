@@ -1,0 +1,134 @@
+;; Configuration for kanata.
+;; Docs: https://jtroo.github.io/config.html
+
+(defcfg process-unmapped-keys yes)
+
+(defsrc
+  tab  q w e r t y u i o p [
+  caps a s d f g h j k l ; '
+  lsft z x c v b n m , . / rsft
+  lctl lmet lalt spc ralt rctl
+  slck)
+
+(defvirtualkeys
+  ;; Used for emulating alt+tab.
+  alt lalt)
+
+(defalias
+  valttab (macro (on-press press-virtualkey alt) 5 tab)
+
+  symlk (layer-while-held symbol)
+  ;; Alias for the navigation layer command + wrapping to enable
+  ;; using the same key for alt+tab.
+  ;; Source: https://github.com/jtroo/kanata/discussions/1164
+  navlk (tap-hold-press 200 200 lalt (multi (layer-while-held navigation) (on-release release-virtualkey alt) ))
+
+  ;; The cedilha symbol combination in the US intl. keyboard layout.
+  ced RA-,
+
+  ;; Shifted Symbols
+  ;; Symbols that normally need you to have 'shift' pressed.
+
+  + S-=
+  ~ S-`
+  ! S-1
+  @ S-2
+  # S-3
+  $ S-4
+  % S-5
+  ^ S-6
+  & S-7
+  * S-8
+  paro S-9
+  parc S-0
+  { S-[
+  } S-]
+  | S-\
+  _ S--)
+
+(deflayermap (default)
+  slck (layer-switch pure)
+
+  caps lctl
+  lctl lmet
+
+  [ '
+  ' esc
+
+  ralt @symlk
+  lalt @navlk)
+
+(deflayermap (symbol)
+  ;; Opposite Side
+
+  q @!
+  w @+
+  e @@
+  r @%
+  t @~
+
+  a @#
+  s -
+  d @*
+  f =
+  g @&
+
+  z \
+  x @|
+  c @^
+  v @$
+  b @_
+
+  ;; Main Side
+
+  u @^
+  i @$
+
+  h `
+  j @}
+  k @{
+  l ]
+  ; [
+
+  m @parc
+  , @paro
+  . @ced)
+
+;; Layer without any remaps.
+(deflayer pure
+  tab  q w e r t y u i o p [
+  caps a s d f g h j k l ; '
+  lsft z x c v b n m , . / rsft
+  lctl lmet lalt spc ralt rctl
+  (layer-switch default))
+
+(deflayermap (navigation)
+  ;; Main Side
+
+  ;; Live reload of the kanata config.
+  r lrld
+
+  ;; Restore the alt tab functionality since the layer key for the
+  ;; navigation layer is the alt key.
+  tab @valttab
+
+  ;; Opposite Side
+
+  y pgup
+  u volu
+  i tab
+  o @valttab
+  p vold
+
+  h left
+  j down
+  k up
+  l right
+  ; ret
+  ' bspc
+
+  n pgdn
+  m home
+  , end
+  . (caps-word 2000)
+  / prtsc)

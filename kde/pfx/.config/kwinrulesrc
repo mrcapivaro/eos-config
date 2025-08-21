@@ -1,0 +1,49 @@
+[31b2448d-50aa-4e45-a72a-2cd720d64861]
+Description=Application settings for zen
+ignoregeometry=true
+ignoregeometryrule=3
+position=0,0
+positionrule=3
+size=743,1080
+sizerule=3
+wmclass=zen
+wmclasscomplete=true
+wmclassmatch=2
+
+[43e433c7-2bce-49ca-a006-3a5e52d42437]
+Description=Application settings for emacs
+noborder=true
+noborderrule=3
+position=960,0
+positionrule=3
+size=960,1080
+sizerule=3
+wmclass=emacs
+wmclassmatch=2
+
+[51a3f799-50af-48e0-b3b8-d2a004f22e2f]
+Description=Application settings for ghostty
+noborder=true
+noborderrule=3
+position=743,0
+positionrule=3
+size=1177,1080
+sizerule=3
+wmclass=ghostty
+wmclasscomplete=true
+wmclassmatch=2
+
+[97c10ab1-feab-4ad9-b03a-826e7cad1249]
+Description=Application settings for alacritty
+noborder=true
+noborderrule=3
+position=743,0
+positionrule=3
+size=1177,1080
+sizerule=3
+wmclass=Alacritty
+wmclassmatch=1
+
+[General]
+count=4
+rules=51a3f799-50af-48e0-b3b8-d2a004f22e2f,97c10ab1-feab-4ad9-b03a-826e7cad1249,43e433c7-2bce-49ca-a006-3a5e52d42437,31b2448d-50aa-4e45-a72a-2cd720d64861

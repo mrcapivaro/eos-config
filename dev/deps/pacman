@@ -1,0 +1,12 @@
+lua
+luarocks
+
+python
+python-numpy
+python-scipy
+python-matplotlib
+python-pandas
+python-pygame
+python-pyserial
+python-pillow
+ipython
