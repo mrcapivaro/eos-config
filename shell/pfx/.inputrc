@@ -17,3 +17,4 @@ set show-all-if-ambiguous on
 
 C-o: clear-screen
 C-f: "yazi_wrapper && clear\n"
+C-u: kill-whole-line

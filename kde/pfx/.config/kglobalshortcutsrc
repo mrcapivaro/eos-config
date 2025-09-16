@@ -63,7 +63,7 @@ MoveZoomDown=none,none,Move Zoomed Area Downwards
 MoveZoomLeft=none,none,Move Zoomed Area to Left
 MoveZoomRight=none,none,Move Zoomed Area to Right
 MoveZoomUp=none,none,Move Zoomed Area Upwards
-Overview=none,Meta+W,Toggle Overview
+Overview=Meta+Tab,Meta+W,Toggle Overview
 Setup Window Shortcut=none,,Setup Window Shortcut
 Show Desktop=none,Meta+D,Peek at Desktop
 Switch One Desktop Down=none,Meta+Ctrl+Down,Switch One Desktop Down
@@ -261,7 +261,7 @@ switch to next activity=none,,Switch to Next Activity
 switch to previous activity=none,,Switch to Previous Activity
 toggle do not disturb=none,,Toggle do not disturb
 
-[services][Alacritty.desktop]
+[services][kitty.desktop]
 _launch=Meta+A
 
 [services][org.kde.konsole.desktop]

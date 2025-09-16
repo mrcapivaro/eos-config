@@ -32,3 +32,6 @@ alias ffc="fc-list :family | sed -e 's/.*\///' | fzf"
 alias ta="tmux attach || tmux"
 alias tks="tmux kill-server"
 alias tls="tmux list-sessions"
+
+alias ipy="ipython"
+alias py="python"

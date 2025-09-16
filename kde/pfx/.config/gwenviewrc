@@ -6,29 +6,29 @@ SideBarPage=operations
 MenuBar=Disabled
 
 [Print]
-PrintHeight=17.2
+PrintHeight=4.34
 
 [Recent Files]
-File1[$e]=$HOME/downloads/Questão 1.jpg
-File10[$e]=$HOME/projects/eos-config/all/wallpapers/disco-elysium.png
-File2[$e]=$HOME/pictures/screenshots/screenshot_20250722_155137.png
-File3[$e]=$HOME/downloads/rect2.png
-File4[$e]=$HOME/.local/share/icons/hicolor/48x48/apps/steam_icon_377160.png
-File5[$e]=$HOME/pictures/screenshots/screenshot_20250730_023145.png
-File6[$e]=$HOME/pictures/pp.jpg
-File7[$e]=$HOME/sync/notes/assets/attachments/fundamental-theorem-of-calculus.gif
-File8[$e]=$HOME/sync/notes/assets/attachments/horarios.png
-File9[$e]=$HOME/pictures/screenshots/screenshot_20250608_020039.png
-Name1[$e]=Questão 1.jpg
-Name10[$e]=disco-elysium.png
-Name2[$e]=screenshot_20250722_155137.png
-Name3[$e]=rect2.png
-Name4[$e]=steam_icon_377160.png
-Name5[$e]=screenshot_20250730_023145.png
-Name6[$e]=pp.jpg
-Name7[$e]=fundamental-theorem-of-calculus.gif
-Name8[$e]=horarios.png
-Name9[$e]=screenshot_20250608_020039.png
+File1[$e]=$HOME/downloads/rect2.png
+File10[$e]=$HOME/downloads/exp12/exp12-1.png
+File2[$e]=$HOME/.local/share/icons/hicolor/48x48/apps/steam_icon_377160.png
+File3[$e]=$HOME/pictures/screenshots/screenshot_20250730_023145.png
+File4[$e]=$HOME/sync/notes/assets/attachments/fundamental-theorem-of-calculus.gif
+File5[$e]=$HOME/sync/notes/assets/attachments/horarios.png
+File6[$e]=$HOME/pictures/screenshots/screenshot_20250608_020039.png
+File7[$e]=$HOME/projects/eos-config/all/wallpapers/disco-elysium.png
+File8[$e]=$HOME/downloads/DHyQrZfNRRMA.gif
+File9[$e]=$HOME/pictures/pp.jpg
+Name1[$e]=rect2.png
+Name10[$e]=exp12-1.png
+Name2[$e]=steam_icon_377160.png
+Name3[$e]=screenshot_20250730_023145.png
+Name4[$e]=fundamental-theorem-of-calculus.gif
+Name5[$e]=horarios.png
+Name6[$e]=screenshot_20250608_020039.png
+Name7[$e]=disco-elysium.png
+Name8[$e]=DHyQrZfNRRMA.gif
+Name9[$e]=pp.jpg
 
 [SideBar]
 InformationSplitterSizes=220,255

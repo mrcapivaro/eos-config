@@ -1,5 +1,6 @@
 git
 github-cli
+lazygit
 
 tmux
 fastfetch
@@ -43,7 +44,12 @@ btop
 
 vim
 neovim
+imagemagick
+cairosvg
 python-pynvim
+python-pyperclip
+python-jupyter-client
+neovide
 
 rclone
 aria2
@@ -66,9 +72,13 @@ python
 ipython
 python-pip
 python-numpy
+python-sounddevice
 python-scipy
-python-matplotlib
 python-pandas
+python-matplotlib
+python-pygame
+python-pillow
+python-pyserial
 
 nodejs
 npm
@@ -86,6 +96,7 @@ noto-fonts
 
 
 alacritty
+kitty
 firefox
 chromium
 libreoffice
@@ -108,6 +119,11 @@ wine
 wine-mono
 wine-gecko
 winetricks
+
+mesa
+mesa-utils
+lib32-mesa
+lib32-mesa-utils
 
 
 arduino-cli

@@ -40,6 +40,7 @@ vim.opt.grepprg        = "rg --vimgrep -uu --follow --hidden"
 
 -- == Visual ===================================================================
 
+vim.opt.modeline       = false
 vim.opt.termguicolors  = true
 vim.opt.signcolumn     = "yes"
 vim.opt.colorcolumn    = "81"
@@ -188,7 +189,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
     if vim.v.shell_error ~= 0 then
         vim.api.nvim_echo({
             { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-            { out,                            "WarningMsg" },
+            { out, "WarningMsg" },
             { "\nPress any key to exit..." },
         }, true, {})
         vim.fn.getchar()
@@ -477,7 +478,7 @@ add {
     lazy = false,
     keys = {
         { "<Leader>f/", ":FzfLua blines<CR>" },
-        { "<Leader>/",  ":FzfLua blines<CR>" },
+        { "<Leader>/", ":FzfLua blines<CR>" },
         { "<Leader>ff", ":FzfLua files<CR>" },
         { "<Leader>fw", ":FzfLua live_grep<CR>" },
         { "<Leader>fs", ":FzfLua treesitter<CR>" },
@@ -486,7 +487,7 @@ add {
         { "<Leader>fa", ":FzfLua builtin<CR>" },
         { "<Leader>fc", ":FzfLua zoxide<CR>" },
         { "<Leader>fo", ":FzfLua nvim_options<CR>" },
-        { "<C-x>",      ":FzfLua nvim_options<CR>" },
+        { "<C-x>", ":FzfLua nvim_options<CR>" },
         { "<Leader>jf", ":FzfLua buffers<CR>" },
         { "<Leader>fj", ":FzfLua buffers<CR>" },
         {
@@ -583,10 +584,132 @@ add {
     },
 }
 
--- add {
---     "image.nvim",
---     opts = {},
--- }
+-- requires `sudo pacman -S imagemagick`
+add {
+    "3rd/image.nvim",
+    build = false, -- so that it doesn't build the rock https://github.com/3rd/image.nvim/issues/91#issuecomment-2453430239
+    lazy = true,
+    opts = {
+        backend = "kitty", -- or "ueberzug" or "sixel"
+        processor = "magick_cli", -- or "magick_rock"
+        integrations = {
+            markdown = {
+                enabled = true,
+                clear_in_insert_mode = false,
+                download_remote_images = true,
+                only_render_image_at_cursor = false,
+                only_render_image_at_cursor_mode = "popup", -- or "inline"
+                floating_windows = false, -- if true, images will be rendered in floating markdown windows
+                filetypes = { "markdown", "vimwiki" }, -- markdown extensions (ie. quarto) can go here
+            },
+            neorg = {
+                enabled = true,
+                filetypes = { "norg" },
+            },
+            typst = {
+                enabled = true,
+                filetypes = { "typst" },
+            },
+            html = {
+                enabled = false,
+            },
+            css = {
+                enabled = false,
+            },
+        },
+        max_width = 80,
+        -- max_height = 12,
+        max_width_window_percentage = math.huge,
+        max_height_window_percentage = math.huge,
+        scale_factor = 1.0,
+        window_overlap_clear_enabled = true, -- toggles images when windows are overlapped
+        window_overlap_clear_ft_ignore = {
+            "cmp_menu",
+            "cmp_docs",
+            "snacks_notif",
+            "scrollview",
+            "scrollview_sign",
+        },
+        editor_only_render_when_focused = false, -- auto show/hide images when the editor gains/looses focus
+        tmux_show_only_in_active_window = false, -- auto show/hide images in the correct Tmux window (needs visual-activity off)
+        hijack_file_patterns = {
+            "*.png",
+            "*.jpg",
+            "*.jpeg",
+            "*.gif",
+            "*.webp",
+            "*.avif",
+        }, -- render image files as images when opened
+    },
+}
+
+-- distro package deps: pynvim, jupyter_client;
+-- sometimes needed to create the folder '~/.local/share/jupyter/runtime'
+-- manually;
+add {
+    "benlubas/molten-nvim",
+    version = "^1.0.0", -- use version <2.0.0 to avoid breaking changes
+    dependencies = { "3rd/image.nvim" },
+    lazy = true,
+    ft = {
+        "markdown",
+        "quarto",
+        "org",
+        "neorg",
+    },
+    keys = {
+        {
+            lleader "m",
+            "",
+            desc = "Molten",
+        },
+        {
+            lleader "mi",
+            cmd "MoltenInit",
+            desc = "Molten: Init kernel",
+        },
+        {
+            lleader "me",
+            cmd "MoltenEvaluateOperator",
+            desc = "Molten: Run operator selection",
+        },
+        {
+            lleader "m.",
+            cmd "MoltenEvaluateLine",
+            desc = "Molten: Run current line",
+        },
+        {
+            lleader "mr",
+            cmd "MoltenReevaluateCell",
+            desc = "Molten: Reevaluate cell",
+        },
+        {
+            lleader "md",
+            cmd "MoltenDelete",
+            desc = "Molten: Delete current cell",
+        },
+        {
+            lleader "mo",
+            cmd "MoltenEnterOutput",
+            desc = "Molten: Enter cell's output",
+        },
+        {
+            mode = "v",
+            lleader "me",
+            ":<C-u>MoltenEvaluateVisual<CR>gv",
+            desc = "Molten: Reevaluate cell",
+        },
+    },
+    build = ":UpdateRemotePlugins",
+    init = function()
+        vim.g.molten_image_provider = "image.nvim"
+
+        vim.g.molten_output_win_max_height = 20
+
+        vim.g.molten_virt_text_output = true
+        vim.g.molten_virt_text_max_lines = 20
+    end,
+}
 
 -- --- Typst -------------------------------------------------------------------
 
@@ -895,6 +1018,12 @@ add {
     opts = {},
     config = function(_, opts)
         require("csvview").setup(opts)
+        vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
+            pattern = { "*.csv" },
+            callback = function()
+                vim.fn.execute "CsvViewEnable"
+            end,
+        })
         vim.keymap.set(
             "n",
             lleader "s",
@@ -965,7 +1094,7 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 -- == Quality of Life  =========================================================
 
 setmap {
-    { non_insert, "<Leader>q", ":quitall!<CR>",   "Quit Neovim" },
+    { non_insert, "<Leader>q", ":quitall!<CR>", "Quit Neovim" },
     -- { non_insert, "<tab>", "za" },
     {
         all,
@@ -973,20 +1102,20 @@ setmap {
         "<cmd>noh<CR><esc>",
         "Escape and also clear hlsearch",
     },
-    { non_insert, "<C-a>",     "ggVG" },
-    { visual,     "<S-k>",     "<cmd>m+1<CR>vv" },
-    { visual,     "<S-j>",     "<cmd>m-2<CR>vv" },
-    { line,       "<S-k>",     ":m '<-2<CR>gv=gv" },
-    { line,       "<S-j>",     ":m '>+1<CR>gv=gv" },
-    { line,       ">",         ">gv" },
-    { line,       "<",         "<gv" },
-    { normal,     "<C-u>",     "<C-u>zz" },
-    { normal,     "<C-d>",     "<C-d>zz" },
-    { normal,     "n",         "nzz" },
-    { normal,     "N",         "Nzz" },
+    { non_insert, "<C-a>", "ggVG" },
+    { visual, "<S-k>", "<cmd>m+1<CR>vv" },
+    { visual, "<S-j>", "<cmd>m-2<CR>vv" },
+    { line, "<S-k>", ":m '<-2<CR>gv=gv" },
+    { line, "<S-j>", ":m '>+1<CR>gv=gv" },
+    { line, ">", ">gv" },
+    { line, "<", "<gv" },
+    { normal, "<C-u>", "<C-u>zz" },
+    { normal, "<C-d>", "<C-d>zz" },
+    { normal, "n", "nzz" },
+    { normal, "N", "Nzz" },
     -- Macros
-    { non_insert, "<C-q>",     "q" },
-    { non_insert, "q",         "@" },
+    { non_insert, "<C-q>", "q" },
+    { non_insert, "q", "@" },
 }
 
 -- == Window Commands  =========================================================
@@ -994,8 +1123,8 @@ setmap {
 local direction_keys = {
     -- stylua: ignore
     left  = "h",
-    down  = "j",
-    up    = "k",
+    down = "j",
+    up = "k",
     right = "l",
 }
 
@@ -1012,16 +1141,16 @@ local SmartResize = function(direction, amount)
 end
 
 setmap {
-    { normal, "<Leader>w",  "",           "Window" },
-    { normal, "<Leader>wd", "<C-w>q",     "Close current window" },
+    { normal, "<Leader>w", "", "Window" },
+    { normal, "<Leader>wd", "<C-w>q", "Close current window" },
     { normal, "<Leader>w.", "<C-w><C-o>", "Close all other windows" },
-    { normal, "<Leader>ws", "<C-w>s",     "Horizontal split" },
-    { normal, "<Leader>wv", "<C-w>v",     "Vertical split" },
-    { normal, "<Leader>wo", "<C-w>w",     "Go to last window" },
-    { normal, "<Leader>wh", "<C-w>h",     "Move window focus left" },
-    { normal, "<Leader>wj", "<C-w>j",     "Move window focus down" },
-    { normal, "<Leader>wk", "<C-w>k",     "Move window focus up" },
-    { normal, "<Leader>wl", "<C-w>l",     "Move window focus right" },
+    { normal, "<Leader>ws", "<C-w>s", "Horizontal split" },
+    { normal, "<Leader>wv", "<C-w>v", "Vertical split" },
+    { normal, "<Leader>wo", "<C-w>w", "Go to last window" },
+    { normal, "<Leader>wh", "<C-w>h", "Move window focus left" },
+    { normal, "<Leader>wj", "<C-w>j", "Move window focus down" },
+    { normal, "<Leader>wk", "<C-w>k", "Move window focus up" },
+    { normal, "<Leader>wl", "<C-w>l", "Move window focus right" },
 }
 
 local setrmap = function(args)
@@ -1056,11 +1185,10 @@ setmap {
 -- == Execution of code  =======================================================
 
 setmap {
-    { non_insert, "x",  "",         "Execute" },
+    { non_insert, "x", "", "Execute" },
     { non_insert, "xx", ":" },
     { non_insert, "xc", ":!" },
-    { normal,     "xl", ":%lua<CR>" },
-    { visual,     "xl", ":lua<CR>" },
+    { non_insert, "xl", ":<UP><CR>" },
 }
 
 -- == Surround Selection  ======================================================
@@ -1121,7 +1249,7 @@ setmap {
         ":b#<CR>",
         "Switch to last buffer",
     },
-    { normal, "<Leader>j",  "",       "Buffers" },
+    { normal, "<Leader>j", "", "Buffers" },
     {
         normal,
         "<Leader>js",
@@ -1152,8 +1280,8 @@ setmap {
     },
     { normal, "<Leader>jl", cmd "bn", "Next buffer" },
     { normal, "<Leader>jh", cmd "bp", "Previous buffer" },
-    { normal, "L",          cmd "bn", "Next buffer" },
-    { normal, "H",          cmd "bp", "Previous buffer" },
+    { normal, "L", cmd "bn", "Next buffer" },
+    { normal, "H", cmd "bp", "Previous buffer" },
 }
 
 -- == Toggle Vim Options =======================================================
@@ -1168,7 +1296,7 @@ local toggle_option = function(option)
 end
 
 setmap {
-    { normal, "<Leader>t",  "",                   "Toggle" },
+    { normal, "<Leader>t", "", "Toggle" },
     { normal, "<Leader>tw", toggle_option "wrap", "Toggle text wrapping." },
     {
         normal,

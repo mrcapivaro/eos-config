@@ -1,3 +1,6 @@
+[Annotations]
+annotationToolType=3
+
 [General]
 autoSaveImage=true
 clipboardGroup=PostScreenshotCopyImage
@@ -11,7 +14,7 @@ quitAfterSaveCopyExport=true
 [ImageSave]
 imageFilenameTemplate=screenshot_<yyyy><MM><dd>_<HH><mm><ss>
 imageSaveLocation=file:///home/mrcapivaro/pictures/screenshots/
-lastImageSaveLocation=file:///home/mrcapivaro/pictures/screenshots/screenshot_20250820_141041.png
+lastImageSaveLocation=file:///home/mrcapivaro/pictures/screenshots/screenshot_20250915_230631.png
 translatedScreenshotsFolder=Screenshots
 
 [VideoSave]

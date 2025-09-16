@@ -36,8 +36,10 @@ eval "$(zoxide init bash)"
 command -v z >/dev/null 2>&1 && alias cd="z"
 
 # ==============================================================================
-# Tmux
+# Custom Keybinds
 
-if [ -z "${TMUX}" ]; then
-    tmux attach-session || tmux
-fi
+# To yank the current line to the system's clipboard using OSC52
+yank_like_to_cb() {
+    printf "\e]52;c;%s\a" "$(printf %s "$READLINE_LINE" | openssl base64 -A)"
+}
+bind -x '"\C-y": yank_like_to_cb'

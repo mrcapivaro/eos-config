@@ -3,32 +3,32 @@ FullScreen=false
 
 [General]
 LockSidebar=true
-ShowSidebar=false
+ShowSidebar=true
 
 [MainWindow]
 MenuBar=Disabled
 
 [Recent Files]
-File1[$e]=$HOME/documents/utfpr/pdfs/convalidacoes-3p.pdf
-File10[$e]=$HOME/sync/books/entendendo-algoritmos_aditya-bhargava.pdf
-File2[$e]=$HOME/sync/uni/documentos antigos/pdfs/convalidacoes-humanidades_Guilherme-Pacheco-Batista.pdf
-File3[$e]=$HOME/sync/uni/documentos antigos/historico-mecatronica-guilherme-pacheco-batista.pdf
-File4[$e]=$HOME/sync/books/fisica-basica-3-eletromagnetismo_moyses.pdf
-File5[$e]=$HOME/sync/notes/z-transform.pdf
-File6[$e]=$HOME/projects/learn/cpp/Modern-CPP-Programming/01.Introduction.pdf
-File7[$e]=$HOME/projects/learn/cpp/Modern-CPP-Programming/03.Basic_Concepts_I.pdf
-File8[$e]=$HOME/projects/learn/cpp/Modern-CPP-Programming/modern-cpp.pdf
-File9[$e]=$HOME/sync/notes/temas-e-problemas.pdf
-Name1[$e]=convalidacoes-3p.pdf
-Name10[$e]=entendendo-algoritmos_aditya-bhargava.pdf
-Name2[$e]=convalidacoes-humanidades_Guilherme-Pacheco-Batista.pdf
-Name3[$e]=historico-mecatronica-guilherme-pacheco-batista.pdf
-Name4[$e]=fisica-basica-3-eletromagnetismo_moyses.pdf
-Name5[$e]=z-transform.pdf
-Name6[$e]=01.Introduction.pdf
-Name7[$e]=03.Basic_Concepts_I.pdf
-Name8[$e]=modern-cpp.pdf
-Name9[$e]=temas-e-problemas.pdf
+File1[$e]=$HOME/sync/books/applied-digital-signal-processing_manolakis.pdf
+File10[$e]=$HOME/downloads/AoA_symbols.pdf
+File2[$e]=$HOME/sync/books/geometria-euclidiana-plana---joao-lucas.pdf
+File3[$e]=$HOME/sync/books/mecsol_7ed-hibbeler.pdf
+File4[$e]=$HOME/sync/books/equacoes-diferenciais-elementares-e-problemas-de-valores de-contorno_william-e-boyce.pdf
+File5[$e]=$HOME/downloads/BC546.PDF
+File6[$e]=$HOME/sync/books/signals-and-systems_oppenheim-willsky-nawab_2nd-1996.pdf
+File7[$e]=$HOME/sync/books/compiladores_principios-tecnicas-e-ferramentas_alfred-v-aho.pdf
+File8[$e]=$HOME/downloads/White Green Cute Simple Memo A5 Document _20250912_183116_0000.pdf_20250914_220013_0000.pdf
+File9[$e]=$HOME/sync/books/tormenta20_livro-de-regras.pdf
+Name1[$e]=applied-digital-signal-processing_manolakis.pdf
+Name10[$e]=AoA_symbols.pdf
+Name2[$e]=geometria-euclidiana-plana---joao-lucas.pdf
+Name3[$e]=mecsol_7ed-hibbeler.pdf
+Name4[$e]=equacoes-diferenciais-elementares-e-problemas-de-valores de-contorno_william-e-boyce.pdf
+Name5[$e]=BC546.PDF
+Name6[$e]=signals-and-systems_oppenheim-willsky-nawab_2nd-1996.pdf
+Name7[$e]=compiladores_principios-tecnicas-e-ferramentas_alfred-v-aho.pdf
+Name8[$e]=White Green Cute Simple Memo A5 Document _20250912_183116_0000.pdf_20250914_220013_0000.pdf
+Name9[$e]=tormenta20_livro-de-regras.pdf
 
 [Shortcuts]
 mainToolBar=Ctrl+T
