@@ -38,7 +38,7 @@ command -v z >/dev/null 2>&1 && alias cd="z"
 # ==============================================================================
 # Custom Keybinds
 
-# To yank the current line to the system's clipboard using OSC52
+# To yank the current line to the system's clipboard using OSC52.
 yank_like_to_cb() {
     printf "\e]52;c;%s\a" "$(printf %s "$READLINE_LINE" | openssl base64 -A)"
 }

@@ -326,6 +326,24 @@ add {
     },
 }
 
+add {
+    "christoomey/vim-tmux-navigator",
+    cmd = {
+        "TmuxNavigateLeft",
+        "TmuxNavigateDown",
+        "TmuxNavigateUp",
+        "TmuxNavigateRight",
+        "TmuxNavigatePrevious",
+        "TmuxNavigatorProcessList",
+    },
+    keys = {
+        { "<c-h>", "<cmd><C-U>TmuxNavigateLeft<cr>" },
+        { "<c-j>", "<cmd><C-U>TmuxNavigateDown<cr>" },
+        { "<c-k>", "<cmd><C-U>TmuxNavigateUp<cr>" },
+        { "<c-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
+    },
+}
+
 -- --- Motions -----------------------------------------------------------------
 
 add {
@@ -770,6 +788,11 @@ add {
             "<Leader>rs",
             ":OverseerRunCmd<CR>",
         },
+        {
+            desc = "Tasks: Actions for current task",
+            "<Leader>ra",
+            ":OverseerTaskAction<CR>",
+        },
     },
     opts = {
         templates = { "builtin" },
@@ -1009,8 +1032,7 @@ add {
     },
 }
 
--- -----------------------------------------------------------------------------
--- CSV
+-- --- CSV ---------------------------------------------------------------------
 
 add {
     "hat0uma/csvview.nvim",
@@ -1033,7 +1055,7 @@ add {
     end,
 }
 
--- == Plugin Setup  ============================================================
+-- == Plugin Setup =============================================================
 
 require("lazy").setup(plugin_list, {
     -- ui = { border = "single" },

@@ -19,4 +19,4 @@ sdms run
 
 ## Inspiration
 
-- [eeowaa's stow-dotfiles][https://github.com/eeowaa/stow-dotfiles/tree/main]
+- [eeowaa's stow-dotfiles](https://github.com/eeowaa/stow-dotfiles/tree/main)

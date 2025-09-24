@@ -14,7 +14,7 @@ quitAfterSaveCopyExport=true
 [ImageSave]
 imageFilenameTemplate=screenshot_<yyyy><MM><dd>_<HH><mm><ss>
 imageSaveLocation=file:///home/mrcapivaro/pictures/screenshots/
-lastImageSaveLocation=file:///home/mrcapivaro/pictures/screenshots/screenshot_20250915_230631.png
+lastImageSaveLocation=file:///home/mrcapivaro/pictures/screenshots/screenshot_20250921_234341.png
 translatedScreenshotsFolder=Screenshots
 
 [VideoSave]
