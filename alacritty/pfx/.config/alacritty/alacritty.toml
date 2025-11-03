@@ -1,13 +1,13 @@
 [general]
-import = [ "~/.config/alacritty/melange_dark.toml" ]
+import = ["~/.config/alacritty/gruvbox_dark.toml"]
 
 [window]
 dynamic_padding = true
 padding = { x = 1, y = 0 }
 
 [font]
-size = 9
-normal.family = "JetBrainsMono NF"
+size = 9.0
+normal.family = "JetBrainsMono Nerd Font"
 
-[env]
-TERM = "alacritty-direct"
+# [env]
+# TERM = "alacritty-direct"

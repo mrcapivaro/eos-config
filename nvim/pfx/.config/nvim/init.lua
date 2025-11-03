@@ -211,50 +211,67 @@ end
 -- --- Appearance --------------------------------------------------------------
 
 add {
-    "savq/melange-nvim",
+    "zenbones-theme/zenbones.nvim",
+    dependencies = "rktjmp/lush.nvim",
+    lazy = false,
     priority = 1000,
     init = function()
-        vim.cmd.colorscheme "melange"
-    end,
-    config = function()
-        local colors = require("colors").melange.dark
-        local highlight_overrides = {
-            ColorColumn = { bg = colors.a.float },
-            CursorLine = { bg = colors.a.float },
-            RenderMarkdownChecked = { fg = colors.b.green },
-            EndOfBuffer = { fg = colors.a.bg },
-            WinSeparator = { fg = colors.a.float },
-            Whitespace = { fg = colors.a.float },
-            NonText = { fg = colors.a.float },
-            -- FoldColumn = { bg = colors.dark0 },
-            -- SignColumn = { bg = colors.dark0 },
-            -- Folded = {
-            --     fg = colors.bright_green,
-            --     bg = colors.dark0,
-            -- },
-            -- -- Floats
-            NormalFloat = { bg = colors.a.bg },
-            FloatBorder = { bg = colors.a.bg },
-            FloatTitle = { bg = colors.a.bg },
-            FloatFooter = { bg = colors.a.bg },
-            -- -- Autocomplete
-            BlinkCmpMenu = { bg = colors.a.bg },
-            BlinkCmpKind = { bg = colors.a.bg },
-            BlinkCmpMenuBorder = { bg = colors.a.bg },
-            BlinkCmpMenuSelection = {
-                bg = colors.a.sel,
-                fg = colors.b.yellow,
-            },
-            -- Which Key
-            WhichKeyTitle = { bg = colors.a.bg, fg = colors.b.yellow },
-        }
         vim.api.nvim_create_autocmd("ColorScheme", {
             callback = function()
-                for name, attrs in pairs(highlight_overrides) do
-                    vim.api.nvim_set_hl(0, name, attrs)
-                end
+                local colors = require "zenbones"
+                vim.api.nvim_set_hl(
+                    0,
+                    "Whitespace",
+                    { fg = colors.Whitespace.fg.da(60).hex }
+                )
+                vim.api.nvim_set_hl(
+                    0,
+                    "NonText",
+                    { fg = colors.NonText.fg.da(60).hex }
+                )
+                vim.api.nvim_set_hl(
+                    0,
+                    "ColorColumn",
+                    { bg = colors.CursorLine.bg.hex }
+                )
+                vim.api.nvim_set_hl(
+                    0,
+                    "EndOfBuffer",
+                    { fg = colors.Normal.bg.hex }
+                )
+                vim.api.nvim_set_hl(
+                    0,
+                    "NormalFloat",
+                    { bg = colors.Normal.bg.hex }
+                )
+                vim.api.nvim_set_hl(
+                    0,
+                    "FloatBorder",
+                    { bg = colors.Normal.bg.hex }
+                )
+                vim.api.nvim_set_hl(
+                    0,
+                    "FloatTitle",
+                    { bg = colors.Normal.bg.hex }
+                )
+                vim.api.nvim_set_hl(
+                    0,
+                    "FloatFooter",
+                    { bg = colors.Normal.bg.hex }
+                )
+                vim.api.nvim_set_hl(
+                    0,
+                    "BlinkCmpMenu",
+                    { bg = colors.Normal.bg.hex }
+                )
+                vim.api.nvim_set_hl(
+                    0,
+                    "BlinkCmpMenuBorder",
+                    { bg = colors.Normal.bg.hex }
+                )
             end,
         })
+        vim.cmd.colorscheme "zenbones"
     end,
 }
 
@@ -460,12 +477,12 @@ add {
             desc = "Open yazi at the current file",
         },
         {
-            "<Leader>E",
+            "<Leader>e",
             "<cmd>Yazi cwd<CR>",
             desc = "Open the file manager in nvim's working directory",
         },
         {
-            "<Leader>e",
+            "<Leader>E",
             "<cmd>Yazi toggle<CR>",
             desc = "Resume the last yazi session",
         },
@@ -473,7 +490,7 @@ add {
     opts = {
         yazi_floating_window_border = "single",
         floating_window_scaling_factor = 0.8,
-        keymaps = { change_working_directory = "<C-.>" },
+        keymaps = { change_working_directory = "<C-w>" },
         open_for_directories = true,
         highlight_groups = {
             hovered_buffer = {},
@@ -585,6 +602,7 @@ add {
         anti_conceal = { enabled = true },
         dash = { enabled = false },
         code = {
+            sign = false,
             width = "block",
             left_pad = 1,
             right_pad = 1,
@@ -595,7 +613,7 @@ add {
 
 add {
     "TobinPalmer/pastify.nvim",
-    ft = "markdown",
+    ft = {"markdown", "typst"},
     opts = {
         opts = { local_path = "/assets/attachments/" },
         ft = { typst = '#image("$IMG$")' },
@@ -625,7 +643,7 @@ add {
                 filetypes = { "norg" },
             },
             typst = {
-                enabled = true,
+                enabled = false,
                 filetypes = { "typst" },
             },
             html = {
@@ -762,6 +780,7 @@ add {
 
 add {
     "stevearc/overseer.nvim",
+    version = "v1.6.0",
     keys = {
         {
             desc = "Tasks",
@@ -963,18 +982,19 @@ add {
         },
         keymap = {
             preset = "none",
-            ["<C-.>"] = { "show", "hide", "fallback" },
-            ["<C-u>"] = { "scroll_documentation_up", "fallback" },
-            ["<C-d>"] = { "scroll_documentation_down", "fallback" },
             -- Main
+            ["<C-.>"] = { "show", "hide", "fallback" },
+            ["<C-k>"] = { "select_prev", "fallback" },
+            ["<C-j>"] = { "select_next", "fallback" },
+            ["<C-l>"] = { "select_and_accept", "fallback" },
+            -- Docs
             ["<C-h>"] = {
                 "hide_documentation",
                 "show_documentation",
                 "fallback",
             },
-            ["<C-k>"] = { "select_prev", "fallback" },
-            ["<C-j>"] = { "select_next", "fallback" },
-            ["<C-l>"] = { "select_and_accept", "fallback" },
+            ["<C-u>"] = { "scroll_documentation_up", "fallback" },
+            ["<C-d>"] = { "scroll_documentation_down", "fallback" },
             -- Snippets
             ["<Tab>"] = { "snippet_forward", "fallback" },
             ["<S-Tab>"] = { "snippet_backward", "fallback" },
@@ -1060,7 +1080,7 @@ add {
 require("lazy").setup(plugin_list, {
     -- ui = { border = "single" },
     defaults = { lazy = false },
-    install = { colorscheme = { "gruvbox", "habamax" } },
+    install = { colorscheme = { "habamax" } },
     performance = {
         rtp = {
             disabled_plugins = {
@@ -1095,17 +1115,25 @@ require("lazy").setup(plugin_list, {
 -- = Autocommands ==============================================================
 -- =============================================================================
 
-local augroup = vim.api.nvim_create_augroup("User", {})
+local user_augroup = vim.api.nvim_create_augroup("User", {})
 
 -- Try to move to the last editing position when opening a recent buffer.
 vim.api.nvim_create_autocmd("BufReadPost", {
-    group = augroup,
+    group = user_augroup,
     callback = function()
         local mark = vim.api.nvim_buf_get_mark(0, '"')
         local lcount = vim.api.nvim_buf_line_count(0)
         if mark[1] > 0 and mark[1] <= lcount then
             pcall(vim.api.nvim_win_set_cursor, 0, mark)
         end
+    end,
+})
+
+-- Auto reload files on change.
+vim.api.nvim_create_autocmd("BufEnter", {
+    group = user_augroup,
+    callback = function()
+        vim.cmd "checktime"
     end,
 })
 

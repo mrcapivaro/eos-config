@@ -20,12 +20,12 @@ alias b="\$BROWSER"
 alias fl="yazi_wrapper"
 alias diff="colordiff -u"
 
-alias notes="cd ~/sync/notes && fl ."
-alias n="cd ~/sync/notes && fl ."
-alias bookmarks="e ~/sync/notes/bookmarks.md"
-alias b="e ~/sync/notes/bookmarks.md"
-alias refile="e ~/sync/notes/refile.md"
-alias r="e ~/sync/notes/refile.md"
+alias notes="cd ~/sync/notes && \$EDITOR"
+alias n="cd ~/sync/notes && \$EDITOR"
+alias bookmarks="\$EDITOR ~/sync/notes/bookmarks.md"
+alias b="\$EDITOR ~/sync/notes/bookmarks.md"
+alias refile="\$EDITOR ~/sync/notes/refile.md"
+alias r="\$EDITOR ~/sync/notes/refile.md"
 
 alias ffc="fc-list :family | sed -e 's/.*\///' | fzf"
 

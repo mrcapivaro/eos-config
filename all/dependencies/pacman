@@ -3,7 +3,6 @@ github-cli
 lazygit
 
 tmux
-fastfetch
 
 wget
 curl
@@ -15,16 +14,9 @@ fzf
 jq
 yq
 
-tldr
-
 bat
-less
-
 colordiff
 tree
-
-sed
-gawk
 
 tar
 gzip
@@ -65,7 +57,6 @@ gcc
 clang
 cmake
 
-go
 rustup
 
 python
@@ -95,12 +86,10 @@ ttf-iosevka-nerd
 noto-fonts
 
 
-alacritty
 kitty
 firefox
 chromium
 libreoffice
-discord
 qalculate-qt
 
 

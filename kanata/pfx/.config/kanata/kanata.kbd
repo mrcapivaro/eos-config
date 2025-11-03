@@ -50,7 +50,7 @@
   slck (layer-switch pure)
 
   caps lctl
-  lctl lmet
+  lctl esc
 
   [ '
   ' esc
