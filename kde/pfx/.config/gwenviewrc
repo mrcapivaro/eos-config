@@ -12,26 +12,26 @@ MenuBar=Disabled
 PrintHeight=4.34
 
 [Recent Files]
-File1[$e]=$HOME/pictures/screenshots/screenshot_20251023_205221.png
-File10[$e]=$HOME/downloads/Figure_1.png
-File2[$e]=$HOME/pictures/screenshots/screenshot_20251022_223056.png
-File3[$e]=$HOME/pictures/screenshots/screenshot_20251025_033909.png
-File4[$e]=$HOME/pictures/screenshots/screenshot_20251028_030155.png
-File5[$e]=$HOME/pictures/screenshots/screenshot_20251027_192345.png
-File6[$e]=$HOME/pictures/screenshots/screenshot_20251025_203001.png
-File7[$e]=$HOME/pictures/screenshots/screenshot_20251027_150231.png
-File8[$e]=$HOME/pictures/screenshots/screenshot_20251024_225507.png
-File9[$e]=$HOME/pictures/screenshots/screenshot_20251025_161531.png
-Name1[$e]=screenshot_20251023_205221.png
-Name10[$e]=Figure_1.png
-Name2[$e]=screenshot_20251022_223056.png
-Name3[$e]=screenshot_20251025_033909.png
-Name4[$e]=screenshot_20251028_030155.png
-Name5[$e]=screenshot_20251027_192345.png
-Name6[$e]=screenshot_20251025_203001.png
-Name7[$e]=screenshot_20251027_150231.png
-Name8[$e]=screenshot_20251024_225507.png
-Name9[$e]=screenshot_20251025_161531.png
+File1[$e]=$HOME/pictures/screenshots/screenshot_20251025_203001.png
+File10[$e]=$HOME/sync/notes/assets/attachments/band-pass-filter.png
+File2[$e]=$HOME/pictures/screenshots/screenshot_20251027_150231.png
+File3[$e]=$HOME/pictures/screenshots/screenshot_20251024_225507.png
+File4[$e]=$HOME/pictures/screenshots/screenshot_20251025_161531.png
+File5[$e]=$HOME/downloads/Figure_1.png
+File6[$e]=$HOME/pictures/iwantjuicepls.png
+File7[$e]=$HOME/pictures/star.png
+File8[$e]=$HOME/pictures/jim.png
+File9[$e]=$HOME/pictures/apple.png
+Name1[$e]=screenshot_20251025_203001.png
+Name10[$e]=band-pass-filter.png
+Name2[$e]=screenshot_20251027_150231.png
+Name3[$e]=screenshot_20251024_225507.png
+Name4[$e]=screenshot_20251025_161531.png
+Name5[$e]=Figure_1.png
+Name6[$e]=iwantjuicepls.png
+Name7[$e]=star.png
+Name8[$e]=jim.png
+Name9[$e]=apple.png
 
 [SideBar]
 InformationSplitterSizes=220,255

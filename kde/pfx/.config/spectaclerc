@@ -1,5 +1,6 @@
 [Annotations]
-annotationToolType=10
+annotationToolType=2
+highlighterStrokeColor=170,0,0
 textFont=Noto Sans,22,-1,0,400,0,0,0,0,0,0,0,0,0,0,1
 textFontColor=255,0,0
 
@@ -16,7 +17,7 @@ quitAfterSaveCopyExport=true
 [ImageSave]
 imageFilenameTemplate=screenshot_<yyyy><MM><dd>_<HH><mm><ss>
 imageSaveLocation=file:///home/mrcapivaro/pictures/screenshots/
-lastImageSaveLocation=file:///home/mrcapivaro/pictures/screenshots/screenshot_20251102_002010.png
+lastImageSaveLocation=file:///home/mrcapivaro/pictures/screenshots/screenshot_20251115_194143.png
 translatedScreenshotsFolder=Screenshots
 
 [VideoSave]

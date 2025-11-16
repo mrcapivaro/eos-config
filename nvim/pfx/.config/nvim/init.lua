@@ -189,7 +189,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
     if vim.v.shell_error ~= 0 then
         vim.api.nvim_echo({
             { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-            { out, "WarningMsg" },
+            { out,                            "WarningMsg" },
             { "\nPress any key to exit..." },
         }, true, {})
         vim.fn.getchar()
@@ -490,7 +490,7 @@ add {
     opts = {
         yazi_floating_window_border = "single",
         floating_window_scaling_factor = 0.8,
-        keymaps = { change_working_directory = "<C-w>" },
+        keymaps = { change_working_directory = "<C-g>" },
         open_for_directories = true,
         highlight_groups = {
             hovered_buffer = {},
@@ -513,7 +513,7 @@ add {
     lazy = false,
     keys = {
         { "<Leader>f/", ":FzfLua blines<CR>" },
-        { "<Leader>/", ":FzfLua blines<CR>" },
+        { "<Leader>/",  ":FzfLua blines<CR>" },
         { "<Leader>ff", ":FzfLua files<CR>" },
         { "<Leader>fw", ":FzfLua live_grep<CR>" },
         { "<Leader>fs", ":FzfLua treesitter<CR>" },
@@ -522,7 +522,7 @@ add {
         { "<Leader>fa", ":FzfLua builtin<CR>" },
         { "<Leader>fc", ":FzfLua zoxide<CR>" },
         { "<Leader>fo", ":FzfLua nvim_options<CR>" },
-        { "<C-x>", ":FzfLua nvim_options<CR>" },
+        { "<C-x>",      ":FzfLua nvim_options<CR>" },
         { "<Leader>jf", ":FzfLua buffers<CR>" },
         { "<Leader>fj", ":FzfLua buffers<CR>" },
         {
@@ -613,7 +613,7 @@ add {
 
 add {
     "TobinPalmer/pastify.nvim",
-    ft = {"markdown", "typst"},
+    ft = { "markdown", "typst" },
     opts = {
         opts = { local_path = "/assets/attachments/" },
         ft = { typst = '#image("$IMG$")' },
@@ -626,7 +626,7 @@ add {
     build = false, -- so that it doesn't build the rock https://github.com/3rd/image.nvim/issues/91#issuecomment-2453430239
     lazy = true,
     opts = {
-        backend = "kitty", -- or "ueberzug" or "sixel"
+        backend = "kitty",        -- or "ueberzug" or "sixel"
         processor = "magick_cli", -- or "magick_rock"
         integrations = {
             markdown = {
@@ -635,8 +635,8 @@ add {
                 download_remote_images = true,
                 only_render_image_at_cursor = false,
                 only_render_image_at_cursor_mode = "popup", -- or "inline"
-                floating_windows = false, -- if true, images will be rendered in floating markdown windows
-                filetypes = { "markdown", "vimwiki" }, -- markdown extensions (ie. quarto) can go here
+                floating_windows = false,                   -- if true, images will be rendered in floating markdown windows
+                filetypes = { "markdown", "vimwiki" },      -- markdown extensions (ie. quarto) can go here
             },
             neorg = {
                 enabled = true,
@@ -1144,7 +1144,7 @@ vim.api.nvim_create_autocmd("BufEnter", {
 -- == Quality of Life  =========================================================
 
 setmap {
-    { non_insert, "<Leader>q", ":quitall!<CR>", "Quit Neovim" },
+    { non_insert, "<Leader>q", ":quitall!<CR>",   "Quit Neovim" },
     -- { non_insert, "<tab>", "za" },
     {
         all,
@@ -1152,20 +1152,20 @@ setmap {
         "<cmd>noh<CR><esc>",
         "Escape and also clear hlsearch",
     },
-    { non_insert, "<C-a>", "ggVG" },
-    { visual, "<S-k>", "<cmd>m+1<CR>vv" },
-    { visual, "<S-j>", "<cmd>m-2<CR>vv" },
-    { line, "<S-k>", ":m '<-2<CR>gv=gv" },
-    { line, "<S-j>", ":m '>+1<CR>gv=gv" },
-    { line, ">", ">gv" },
-    { line, "<", "<gv" },
-    { normal, "<C-u>", "<C-u>zz" },
-    { normal, "<C-d>", "<C-d>zz" },
-    { normal, "n", "nzz" },
-    { normal, "N", "Nzz" },
+    { non_insert, "<C-a>",     "ggVG" },
+    { visual,     "<S-k>",     "<cmd>m+1<CR>vv" },
+    { visual,     "<S-j>",     "<cmd>m-2<CR>vv" },
+    { line,       "<S-k>",     ":m '<-2<CR>gv=gv" },
+    { line,       "<S-j>",     ":m '>+1<CR>gv=gv" },
+    { line,       ">",         ">gv" },
+    { line,       "<",         "<gv" },
+    { normal,     "<C-u>",     "<C-u>zz" },
+    { normal,     "<C-d>",     "<C-d>zz" },
+    { normal,     "n",         "nzz" },
+    { normal,     "N",         "Nzz" },
     -- Macros
-    { non_insert, "<C-q>", "q" },
-    { non_insert, "q", "@" },
+    { non_insert, "<C-q>",     "q" },
+    { non_insert, "q",         "@" },
 }
 
 -- == Window Commands  =========================================================
@@ -1173,8 +1173,8 @@ setmap {
 local direction_keys = {
     -- stylua: ignore
     left  = "h",
-    down = "j",
-    up = "k",
+    down  = "j",
+    up    = "k",
     right = "l",
 }
 
@@ -1191,16 +1191,16 @@ local SmartResize = function(direction, amount)
 end
 
 setmap {
-    { normal, "<Leader>w", "", "Window" },
-    { normal, "<Leader>wd", "<C-w>q", "Close current window" },
+    { normal, "<Leader>w",  "",           "Window" },
+    { normal, "<Leader>wd", "<C-w>q",     "Close current window" },
     { normal, "<Leader>w.", "<C-w><C-o>", "Close all other windows" },
-    { normal, "<Leader>ws", "<C-w>s", "Horizontal split" },
-    { normal, "<Leader>wv", "<C-w>v", "Vertical split" },
-    { normal, "<Leader>wo", "<C-w>w", "Go to last window" },
-    { normal, "<Leader>wh", "<C-w>h", "Move window focus left" },
-    { normal, "<Leader>wj", "<C-w>j", "Move window focus down" },
-    { normal, "<Leader>wk", "<C-w>k", "Move window focus up" },
-    { normal, "<Leader>wl", "<C-w>l", "Move window focus right" },
+    { normal, "<Leader>ws", "<C-w>s",     "Horizontal split" },
+    { normal, "<Leader>wv", "<C-w>v",     "Vertical split" },
+    { normal, "<Leader>wo", "<C-w>w",     "Go to last window" },
+    { normal, "<Leader>wh", "<C-w>h",     "Move window focus left" },
+    { normal, "<Leader>wj", "<C-w>j",     "Move window focus down" },
+    { normal, "<Leader>wk", "<C-w>k",     "Move window focus up" },
+    { normal, "<Leader>wl", "<C-w>l",     "Move window focus right" },
 }
 
 local setrmap = function(args)
@@ -1235,7 +1235,7 @@ setmap {
 -- == Execution of code  =======================================================
 
 setmap {
-    { non_insert, "x", "", "Execute" },
+    { non_insert, "x",  "",         "Execute" },
     { non_insert, "xx", ":" },
     { non_insert, "xc", ":!" },
     { non_insert, "xl", ":<UP><CR>" },
@@ -1299,7 +1299,7 @@ setmap {
         ":b#<CR>",
         "Switch to last buffer",
     },
-    { normal, "<Leader>j", "", "Buffers" },
+    { normal, "<Leader>j",  "",       "Buffers" },
     {
         normal,
         "<Leader>js",
@@ -1330,8 +1330,8 @@ setmap {
     },
     { normal, "<Leader>jl", cmd "bn", "Next buffer" },
     { normal, "<Leader>jh", cmd "bp", "Previous buffer" },
-    { normal, "L", cmd "bn", "Next buffer" },
-    { normal, "H", cmd "bp", "Previous buffer" },
+    { normal, "L",          cmd "bn", "Next buffer" },
+    { normal, "H",          cmd "bp", "Previous buffer" },
 }
 
 -- == Toggle Vim Options =======================================================
@@ -1346,7 +1346,7 @@ local toggle_option = function(option)
 end
 
 setmap {
-    { normal, "<Leader>t", "", "Toggle" },
+    { normal, "<Leader>t",  "",                   "Toggle" },
     { normal, "<Leader>tw", toggle_option "wrap", "Toggle text wrapping." },
     {
         normal,
@@ -1367,8 +1367,8 @@ setmap {
 -- == Quickfix  ================================================================
 
 setmap {
-    { normal, leader "c", "", "Quickfix" },
-    { normal, leader "co", cmd "copen", "Open qf list" },
-    { normal, leader "cc", cmd "cclose", "Close qf list" },
+    { normal, leader "c",  "",             "Quickfix" },
+    { normal, leader "co", cmd "copen",    "Open qf list" },
+    { normal, leader "cc", cmd "cclose",   "Close qf list" },
     { normal, leader "cl", cmd "cexpr []", "Clear qf list" },
 }

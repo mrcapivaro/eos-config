@@ -114,7 +114,7 @@ Walk Through Windows of Current Application=none,Meta+`\tAlt+`,Walk Through Wind
 Walk Through Windows of Current Application (Reverse)=none,Meta+~\tAlt+~,Walk Through Windows of Current Application (Reverse)
 Walk Through Windows of Current Application Alternative=none,none,Walk Through Windows of Current Application Alternative
 Walk Through Windows of Current Application Alternative (Reverse)=none,none,Walk Through Windows of Current Application Alternative (Reverse)
-Window Above Other Windows=Meta+Ctrl+T,,Keep Window Above Others
+Window Above Other Windows=Meta+S,,Keep Window Above Others
 Window Below Other Windows=none,,Keep Window Below Others
 Window Close=Meta+C,Alt+F4,Close Window
 Window Custom Quick Tile Bottom=none,,Custom Quick Tile Window to the Bottom
@@ -256,6 +256,9 @@ switch to next activity=none,,Switch to Next Activity
 switch to previous activity=none,,Switch to Previous Activity
 toggle do not disturb=none,,Toggle do not disturb
 
+[services][com.mitchellh.ghostty.desktop]
+_launch=none
+
 [services][kitty.desktop]
 _launch=Meta+A
 
@@ -288,6 +291,3 @@ ToggleTouchpad=Touchpad Toggle
 
 [services][systemsettings.desktop]
 kcm-kscreen=Meta+,
-
-[services][zen.desktop]
-_launch=Meta+S
