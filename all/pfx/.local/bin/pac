@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+command="$1"
+shift
+
+case "$command" in
+    i | install)
+        sudo pacman -S "$@"
+        ;;
+    r | remove)
+        sudo pacman -R "$@"
+        ;;
+    s | search)
+        pacman -Ss "$@"
+        ;;
+    fs | fzfsearch)
+        pacman -Ss --color=always "$@" | paste - - | fzf --reverse --ansi
+        ;;
+    *) sudo pacman "$@" ;;
+esac

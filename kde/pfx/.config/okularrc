@@ -5,27 +5,30 @@ FullScreen=false
 LockSidebar=true
 ShowSidebar=true
 
+[MainWindow]
+MenuBar=Disabled
+
 [Recent Files]
-File1[$e]=$HOME/sync/uni/declaracao-4horas-comlementares.pdf
-File10[$e]=$HOME/downloads/Modelo TCC - UTFPR-CP v2.6/main.pdf
-File2[$e]=$HOME/sync/books/ementa-especializacao-em-ciencia-de-dados.pdf
-File3[$e]=$HOME/sync/notes/algebra-linear.pdf
-File4[$e]=$HOME/sync/rpg/cthulu-era-moderna-mauricio-de-souza.pdf
-File5[$e]=$HOME/sync/books/modern-control-engineering_5-ed_katsuhika-ogata.pdf
-File6[$e]=$HOME/sync/notes/edo_filtros-de-segunda-ordem.pdf
-File7[$e]=$HOME/sync/notes/equacoes-diferenciais-ordinarias_edos.pdf
-File8[$e]=$HOME/sync/books/equacoes-diferenciais-elementares-e-problemas-de-valores de-contorno_william-e-boyce.pdf
-File9[$e]=$HOME/sync/notes/test.pdf
-Name1[$e]=declaracao-4horas-comlementares.pdf
-Name10[$e]=main.pdf
-Name2[$e]=ementa-especializacao-em-ciencia-de-dados.pdf
-Name3[$e]=algebra-linear.pdf
-Name4[$e]=cthulu-era-moderna-mauricio-de-souza.pdf
-Name5[$e]=modern-control-engineering_5-ed_katsuhika-ogata.pdf
-Name6[$e]=edo_filtros-de-segunda-ordem.pdf
-Name7[$e]=equacoes-diferenciais-ordinarias_edos.pdf
-Name8[$e]=equacoes-diferenciais-elementares-e-problemas-de-valores de-contorno_william-e-boyce.pdf
-Name9[$e]=test.pdf
+File1[$e]=$HOME/sync/notes/assets/note-template.pdf
+File10[$e]=$HOME/sync/books/fisica-basica-3-eletromagnetismo_moyses.pdf
+File2[$e]=$HOME/sync/notes/magic-square-vector-spaces.pdf
+File3[$e]=$HOME/sync/notes/dac-adc.pdf
+File4[$e]=$HOME/sync/books/the-foundations-of-geometry_david-hillbert.pdf
+File5[$e]=$HOME/downloads/8. Transistor de Efeito de Campo.pdf
+File6[$e]=$HOME/sync/notes/equacoes-diferenciais-ordinarias_edos.pdf
+File7[$e]=$HOME/sync/notes/analog2-trabalho-final.pdf
+File8[$e]=$HOME/sync/notes/algebra-linear.pdf
+File9[$e]=$HOME/sync/notes/eletromagnetismo.pdf
+Name1[$e]=note-template.pdf
+Name10[$e]=fisica-basica-3-eletromagnetismo_moyses.pdf
+Name2[$e]=magic-square-vector-spaces.pdf
+Name3[$e]=dac-adc.pdf
+Name4[$e]=the-foundations-of-geometry_david-hillbert.pdf
+Name5[$e]=8. Transistor de Efeito de Campo.pdf
+Name6[$e]=equacoes-diferenciais-ordinarias_edos.pdf
+Name7[$e]=analog2-trabalho-final.pdf
+Name8[$e]=algebra-linear.pdf
+Name9[$e]=eletromagnetismo.pdf
 
 [Shortcuts]
 mainToolBar=Ctrl+T

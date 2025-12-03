@@ -34,8 +34,10 @@ direnv
 yazi
 btop
 
+kitty
 vim
 neovim
+zed
 imagemagick
 cairosvg
 python-pynvim
@@ -86,11 +88,15 @@ ttf-iosevka-nerd
 noto-fonts
 
 
-kitty
+typst
+libreoffice
+
+
+qalculate-qt
+
+
 firefox
 chromium
-libreoffice
-qalculate-qt
 
 
 steam

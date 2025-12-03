@@ -210,69 +210,31 @@ end
 
 -- --- Appearance --------------------------------------------------------------
 
+local colors = require("colors").gruvbox
 add {
-    "zenbones-theme/zenbones.nvim",
-    dependencies = "rktjmp/lush.nvim",
-    lazy = false,
+    "ellisonleao/gruvbox.nvim",
     priority = 1000,
     init = function()
-        vim.api.nvim_create_autocmd("ColorScheme", {
-            callback = function()
-                local colors = require "zenbones"
-                vim.api.nvim_set_hl(
-                    0,
-                    "Whitespace",
-                    { fg = colors.Whitespace.fg.da(60).hex }
-                )
-                vim.api.nvim_set_hl(
-                    0,
-                    "NonText",
-                    { fg = colors.NonText.fg.da(60).hex }
-                )
-                vim.api.nvim_set_hl(
-                    0,
-                    "ColorColumn",
-                    { bg = colors.CursorLine.bg.hex }
-                )
-                vim.api.nvim_set_hl(
-                    0,
-                    "EndOfBuffer",
-                    { fg = colors.Normal.bg.hex }
-                )
-                vim.api.nvim_set_hl(
-                    0,
-                    "NormalFloat",
-                    { bg = colors.Normal.bg.hex }
-                )
-                vim.api.nvim_set_hl(
-                    0,
-                    "FloatBorder",
-                    { bg = colors.Normal.bg.hex }
-                )
-                vim.api.nvim_set_hl(
-                    0,
-                    "FloatTitle",
-                    { bg = colors.Normal.bg.hex }
-                )
-                vim.api.nvim_set_hl(
-                    0,
-                    "FloatFooter",
-                    { bg = colors.Normal.bg.hex }
-                )
-                vim.api.nvim_set_hl(
-                    0,
-                    "BlinkCmpMenu",
-                    { bg = colors.Normal.bg.hex }
-                )
-                vim.api.nvim_set_hl(
-                    0,
-                    "BlinkCmpMenuBorder",
-                    { bg = colors.Normal.bg.hex }
-                )
-            end,
-        })
-        vim.cmd.colorscheme "zenbones"
+        vim.cmd.colorscheme "gruvbox"
     end,
+    opts = {
+        italic = {
+            strings = false,
+            comments = false,
+            folds = false,
+            emphasis = false,
+        },
+        overrides = {
+            Whitespace = { fg = colors.dark0_soft },
+            NonText = { fg = colors.dark0_soft },
+            ColorColumn = { bg = colors.dark0_soft, },
+            CursorLine = { bg = colors.dark0_soft, },
+            SignColumn = { bg = colors.dark0 },
+            NormalFloat = { bg = colors.dark0 },
+            Pmenu = { bg = colors.dark0 },
+            PmenuSel = { fg = colors.dark0_hard, bg = colors.neutral_yellow },
+        },
+    },
 }
 
 -- TABLINE:    Buffers                         ...   Cwd
@@ -584,6 +546,7 @@ add {
     opts = {
         heading = {
             sign = false,
+            atx = false,
             icons = {
                 " ◉  ",
                 " ○  ",
@@ -592,7 +555,6 @@ add {
                 " ✸  ",
                 " ✿  ",
             },
-            -- position = "inline",
         },
         bullet = {
             icons = { "󰧟" },

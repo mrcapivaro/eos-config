@@ -2,7 +2,7 @@
 -- ~/.config/nvim/after/ftplugin/typst.lua
 --
 
-vim.cmd "setlocal wrap"
+-- vim.cmd "setlocal wrap"
 vim.cmd "setlocal nonumber"
 vim.cmd "setlocal nolist"
 
