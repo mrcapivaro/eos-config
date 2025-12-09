@@ -84,7 +84,7 @@ DialogHeight=540
 DialogWidth=720
 
 [Containments][2][Applets][5][Configuration][General]
-launchers=applications:org.kde.dolphin.desktop,applications:dev.vencord.Vesktop.desktop,applications:kitty.desktop,applications:zen.desktop,applications:firefox.desktop,applications:steam.desktop,applications:net.lutris.Lutris.desktop
+launchers=applications:org.kde.dolphin.desktop,applications:dev.vencord.Vesktop.desktop,applications:kitty.desktop,applications:firefox.desktop,applications:steam.desktop,applications:net.lutris.Lutris.desktop
 
 [Containments][2][Applets][6]
 immutability=1
@@ -127,6 +127,7 @@ plugin=org.kde.plasma.volume
 PreloadWeight=100
 
 [Containments][2][Applets][7][Applets][13][Configuration][General]
+currentTab=streams
 migrated=true
 
 [Containments][2][Applets][7][Applets][14]

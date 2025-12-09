@@ -29,7 +29,7 @@ LspConfig.servers = {
         cmd = {
             "clangd",
             "--enable-config",
-            "--fallback-style=llvm",
+            "--fallback-style=webkit",
         },
     },
     ["pyright"] = {},
